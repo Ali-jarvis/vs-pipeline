@@ -1,0 +1,43 @@
+# Runtime output directories
+pdbqt_out/
+vina_out/
+top_hits/
+figures/rank*.png
+figures/*.pse
+
+# Status/log files from screening
+screen.pid
+screen.run.log
+screen.status
+screen.detail.log
+*.tmp
+
+# CSV outputs (regenerate from raw data)
+screening_results.csv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Conda
+.conda/
+
+# Large receptor / library files — don't commit multi-GB data
+*.sdf
+*.pdb
+*.pdbqt
+# ...but do commit the examples in example_data/
+!example_data/*.sdf
+!example_data/*.pdb

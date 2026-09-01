@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this pipeline, please cite it using the metadata below."
+title: "Structure-Based Virtual Screening Pipeline"
+authors:
+  - family-names: Ali
+    given-names: Shahid
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    affiliation: "School of Biology, Hunan University"
+type: software
+license: MIT
+repository-code: "https://github.com/YOUR-USERNAME/vs-pipeline"
+abstract: >
+  A reproducible, scheduler-free pipeline for structure-based virtual screening
+  of large small-molecule libraries against a protein target. Uses RDKit and
+  Meeko for ligand preparation, AutoDock Vina for parallel docking on a single
+  server, custom parsers for ranked CSV output and top-hit extraction, and a
+  PyMOL script for publication-quality 3D interaction figures.
+keywords:
+  - virtual screening
+  - AutoDock Vina
+  - structure-based drug discovery
+  - cheminformatics
+  - RDKit
+  - Meeko
+  - PyMOL
+references:
+  - type: article
+    authors:
+      - family-names: Eberhardt
+        given-names: Jerome
+      - family-names: Santos-Martins
+        given-names: Diogo
+      - family-names: Tillack
+        given-names: Andreas F.
+      - family-names: Forli
+        given-names: Stefano
+    title: "AutoDock Vina 1.2.0: New Docking Methods, Expanded Force Field, and Python Bindings"
+    journal: "Journal of Chemical Information and Modeling"
+    year: 2021
+    volume: 61
+    issue: 8
+    doi: 10.1021/acs.jcim.1c00203
