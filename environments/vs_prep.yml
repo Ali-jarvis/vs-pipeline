@@ -1,0 +1,13 @@
+name: vs_prep
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.10
+  - rdkit=2024.03.*
+  - openbabel=3.1.*
+  - meeko>=0.6
+  - numpy
+  - pandas
+  - tqdm
+  - pip

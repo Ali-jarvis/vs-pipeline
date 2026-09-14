@@ -1,0 +1,11 @@
+name: vs_run
+channels:
+  - conda-forge
+  - schrodinger
+dependencies:
+  - python=3.10
+  - vina>=1.2.5           # AutoDock Vina 1.2.x
+  - pymol-open-source     # for the interaction-figure rendering step
+  - numpy
+  - pandas
+  - pip
