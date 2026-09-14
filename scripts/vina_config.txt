@@ -1,0 +1,29 @@
+# AutoDock Vina configuration
+# ----------------------------------------------------------------------
+# Edit values below for YOUR target before launching the screen.
+# Box center / size come from your binding-site analysis
+# (e.g. centroid of co-crystallized ligand, fpocket cavity, etc.).
+# ----------------------------------------------------------------------
+
+receptor = receptor.pdbqt
+
+# Search box center (Angstroms) — REPLACE with your binding-site coords
+center_x = 0.000
+center_y = 0.000
+center_z = 0.000
+
+# Search box dimensions (Angstroms). 22–25 A per side is typical for a
+# defined pocket; enlarge for blind docking (much slower).
+size_x = 25
+size_y = 25
+size_z = 25
+
+# Number of poses kept per ligand
+num_modes = 9
+
+# Energy range (kcal/mol) between best and worst returned pose
+energy_range = 4
+
+# Exhaustiveness — 8 is Vina's default and fine for screening.
+# Re-dock top hits at exhaustiveness = 32 for higher confidence.
+exhaustiveness = 8
