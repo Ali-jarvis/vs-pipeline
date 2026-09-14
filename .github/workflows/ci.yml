@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Syntax-check Python scripts
+        run: |
+          python -m py_compile scripts/sdf_to_pdbqt.py
+          python -m py_compile scripts/parse_results.py
+          python -m py_compile pymol/render_top10.py
+
+      - name: Syntax-check shell scripts
+        run: |
+          for f in scripts/*.sh pymol/*.sh; do
+            bash -n "$f"
+            echo "OK: $f"
+          done
+
+      - name: Validate conda environment files
+        run: |
+          pip install pyyaml
+          python -c "
+          import yaml
+          for f in ['environments/vs_prep.yml', 'environments/vs_run.yml']:
+              with open(f) as fh:
+                  y = yaml.safe_load(fh)
+              assert 'name' in y and 'dependencies' in y, f
+              print(f'OK: {f}')
+          "
+
+      - name: Verify example SDF parses with RDKit
+        run: |
+          pip install rdkit
+          python -c "
+          from rdkit import Chem
+          suppl = Chem.SDMolSupplier('example_data/sample_library.sdf')
+          mols = [m for m in suppl if m is not None]
+          assert len(mols) >= 2, f'Expected 2 molecules, got {len(mols)}'
+          for m in mols:
+              assert m.HasProp('Catalog ID'), 'Missing Catalog ID'
+              print(f\"OK: {m.GetProp('Catalog ID')}\")
+          "
