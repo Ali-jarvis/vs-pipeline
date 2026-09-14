@@ -45,39 +45,6 @@ Multi-compound SDF  ──►  3D PDBQT ligands  ──►  AutoDock Vina dockin
 - **Publication-ready output.** PyMOL script produces PNGs suitable for
   manuscript figures at 300 DPI.
 
-## Repository layout
-
-```
-.
-├── README.md                     ← you are here
-├── LICENSE                       ← MIT
-├── CITATION.cff                  ← how to cite this pipeline
-├── environments/
-│   ├── vs_prep.yml               ← RDKit + Meeko env for ligand prep
-│   └── vs_run.yml                ← Vina + Python for screening & parsing
-├── scripts/
-│   ├── sdf_to_pdbqt.py           ← 1. SDF → PDBQT batch converter
-│   ├── vina_config.txt           ← Vina config template (edit for your target)
-│   ├── submit_screen.sh          ← 2. Launch detached screen
-│   ├── screen_worker.sh          ← Internal: the actual docking loop
-│   ├── monitor_screen.sh         ← Live progress / ETA viewer
-│   ├── stop_screen.sh            ← Cleanly stop a running screen
-│   └── parse_results.py          ← 3. Rank all compounds; extract top-50
-├── pymol/
-│   ├── render_top10.py           ← 4. Publication-quality figures (3D PyMOL)
-│   └── batch_render.sh           ← Convenience wrapper: render all 10 in one go
-├── docs/
-│   ├── QUICKSTART.md             ← 5-minute walkthrough
-│   ├── PIPELINE.md               ← Detailed protocol
-│   ├── FIGURE_GUIDE.md           ← PyMOL rendering options + customization
-│   └── TROUBLESHOOTING.md
-├── example_data/
-│   ├── sample_library.sdf        ← 3 compounds from Enamine REAL
-│   └── expected_output/          ← what a successful run looks like
-└── figures/
-    └── pipeline_overview.svg     ← the diagram in this README
-```
-
 ## Quick start
 
 **1. Setup (once)**
