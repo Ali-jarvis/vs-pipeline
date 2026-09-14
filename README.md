@@ -83,7 +83,7 @@ Multi-compound SDF  ──►  3D PDBQT ligands  ──►  AutoDock Vina dockin
 **1. Setup (once)**
 
 ```bash
-git clone https://github.com/<your-username>/vs-pipeline.git
+git clone https://github.com/Ali-jarvis/vs-pipeline.git
 cd vs-pipeline
 
 conda env create -f environments/vs_prep.yml
@@ -183,6 +183,11 @@ backends), open a PR.
 
 ## Author
 
-**Dr. Shahid Ali**
-Postdoctoral Fellow, School of Biology, Hunan University
+**Dr. Shahid Ali**  
+Postdoctoral Fellow, School of Biology, Hunan University, Changsha, China  
 Focus: computational biology, structure-based drug discovery, protein engineering
+
+- ORCID: [0000-0002-4724-5086](https://orcid.org/0000-0002-4724-5086)
+- Google Scholar: [scholar.google.com/citations?user=B3jovoIAAAAJ](https://scholar.google.com/citations?user=B3jovoIAAAAJ)
+- Website: [drali.faculty.bio](https://drali.faculty.bio)
+- GitHub: [@Ali-jarvis](https://github.com/Ali-jarvis)
