@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" font-family="Inter, Helvetica, Arial, sans-serif">
+  <defs>
+    <style>
+      .stage { fill: #fff; stroke: #1f2937; stroke-width: 1.5; }
+      .stage-title { font-size: 14px; font-weight: 700; fill: #1f2937; }
+      .stage-sub { font-size: 11px; fill: #4b5563; }
+      .arrow { stroke: #6b7280; stroke-width: 1.5; fill: none; marker-end: url(#arr); }
+      .prep { fill: #eef2ff; }
+      .screen { fill: #ecfdf5; }
+      .rank { fill: #fef3c7; }
+      .figs { fill: #fce7f3; }
+      .label { font-size: 10px; fill: #374151; font-style: italic; }
+      .header { font-size: 12px; font-weight: 600; fill: #6b7280; }
+    </style>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#6b7280"/>
+    </marker>
+  </defs>
+
+  <!-- Title strip -->
+  <text x="360" y="24" text-anchor="middle" class="header">
+    Structure-Based Virtual Screening Pipeline
+  </text>
+
+  <!-- Stage 1: Ligand prep -->
+  <rect class="stage prep" x="20" y="60" width="150" height="90" rx="8"/>
+  <text x="95" y="82" text-anchor="middle" class="stage-title">1. Ligand Prep</text>
+  <text x="95" y="102" text-anchor="middle" class="stage-sub">SDF library</text>
+  <text x="95" y="118" text-anchor="middle" class="stage-sub">↓ RDKit + Meeko</text>
+  <text x="95" y="134" text-anchor="middle" class="stage-sub">3D PDBQT files</text>
+
+  <!-- Arrow 1 -->
+  <path class="arrow" d="M175,105 L200,105"/>
+
+  <!-- Stage 2: Screening -->
+  <rect class="stage screen" x="205" y="60" width="150" height="90" rx="8"/>
+  <text x="280" y="82" text-anchor="middle" class="stage-title">2. Vina Screening</text>
+  <text x="280" y="102" text-anchor="middle" class="stage-sub">Parallel docking</text>
+  <text x="280" y="118" text-anchor="middle" class="stage-sub">↓ Detached job</text>
+  <text x="280" y="134" text-anchor="middle" class="stage-sub">Per-ligand outputs</text>
+
+  <!-- Arrow 2 -->
+  <path class="arrow" d="M360,105 L385,105"/>
+
+  <!-- Stage 3: Ranking -->
+  <rect class="stage rank" x="390" y="60" width="150" height="90" rx="8"/>
+  <text x="465" y="82" text-anchor="middle" class="stage-title">3. Rank &amp; Select</text>
+  <text x="465" y="102" text-anchor="middle" class="stage-sub">Parse affinities</text>
+  <text x="465" y="118" text-anchor="middle" class="stage-sub">↓ Sort by ΔG</text>
+  <text x="465" y="134" text-anchor="middle" class="stage-sub">CSV + Top 50</text>
+
+  <!-- Arrow 3 -->
+  <path class="arrow" d="M545,105 L570,105"/>
+
+  <!-- Stage 4: Figures -->
+  <rect class="stage figs" x="575" y="60" width="130" height="90" rx="8"/>
+  <text x="640" y="82" text-anchor="middle" class="stage-title">4. Figures</text>
+  <text x="640" y="102" text-anchor="middle" class="stage-sub">Top 10 poses</text>
+  <text x="640" y="118" text-anchor="middle" class="stage-sub">↓ PyMOL 300 DPI</text>
+  <text x="640" y="134" text-anchor="middle" class="stage-sub">Publication PNGs</text>
+
+  <!-- Scripts row -->
+  <text x="360" y="185" text-anchor="middle" class="header">Scripts</text>
+  <text x="95" y="205" text-anchor="middle" class="label">sdf_to_pdbqt.py</text>
+  <text x="280" y="205" text-anchor="middle" class="label">submit_screen.sh</text>
+  <text x="280" y="219" text-anchor="middle" class="label">monitor_screen.sh</text>
+  <text x="465" y="205" text-anchor="middle" class="label">parse_results.py</text>
+  <text x="640" y="205" text-anchor="middle" class="label">render_top10.py</text>
+
+  <!-- Environments row -->
+  <text x="360" y="255" text-anchor="middle" class="header">Conda environment</text>
+  <rect class="stage prep" x="20" y="270" width="150" height="30" rx="6"/>
+  <text x="95" y="290" text-anchor="middle" class="stage-sub" font-weight="600">vs_prep</text>
+  <rect class="stage screen" x="205" y="270" width="335" height="30" rx="6"/>
+  <text x="372" y="290" text-anchor="middle" class="stage-sub" font-weight="600">vs_run  (Vina + PyMOL)</text>
+  <rect class="stage figs" x="575" y="270" width="130" height="30" rx="6"/>
+  <text x="640" y="290" text-anchor="middle" class="stage-sub" font-weight="600">vs_run</text>
+
+  <!-- Footer -->
+  <text x="360" y="325" text-anchor="middle" class="stage-sub">
+    Runs on any Linux server. No job scheduler required. Resume-safe. Detached execution.
+  </text>
+</svg>
