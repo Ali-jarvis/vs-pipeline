@@ -1,14 +1,17 @@
 cff-version: 1.2.0
 message: "If you use this pipeline, please cite it using the metadata below."
 title: "Structure-Based Virtual Screening Pipeline"
+version: 1.0.0
+date-released: "2026-09-14"
 authors:
   - family-names: Ali
     given-names: Shahid
-    orcid: "https://orcid.org/0000-0000-0000-0000"
-    affiliation: "School of Biology, Hunan University"
+    orcid: "https://orcid.org/0000-0002-4724-5086"
+    affiliation: "School of Biology, Hunan University, Changsha, China"
 type: software
 license: MIT
-repository-code: "https://github.com/YOUR-USERNAME/vs-pipeline"
+repository-code: "https://github.com/Ali-jarvis/vs-pipeline"
+url: "https://github.com/Ali-jarvis/vs-pipeline"
 abstract: >
   A reproducible, scheduler-free pipeline for structure-based virtual screening
   of large small-molecule libraries against a protein target. Uses RDKit and
